@@ -1,19 +1,41 @@
 <template>
   <div>
-    <h1>Welcome to Our Shoe Store</h1>
-    <Shoe />
+    <h1>peepeepoopoo</h1>
+    <div class="list">
+      <ListComp
+        class="comp"
+        v-for="obj in list"
+        :name="obj.name"
+        :age="obj.age"
+        :gender="obj.gender"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import Shoe from "@/components/shoe.vue";
+import ListComp from "../components/ListComp.vue";
+import { list } from "../../list.js";
 
 export default {
-  name: "Home",
+  name: "HomeView",
   components: {
-    Shoe,
+    ListComp,
+  },
+  data() {
+    return {
+      list,
+    };
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50rem;
+  justify-content: space-evenly;
+}
+</style>
