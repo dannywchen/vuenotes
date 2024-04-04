@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="card">
     <h2>{{ name }}</h2>
-    <p>{{ age }}</p>
-    <h3>{{ gender }}</h3>
+    <p>Age: {{ age }}</p>
+    <h3>Gender: {{ gender }}</h3>
   </div>
 </template>
 
@@ -18,16 +18,27 @@ export default {
 </script>
 
 <style scoped>
-div {
+.card {
   display: flex;
   flex-direction: column;
-  height: 10rem;
   justify-content: space-evenly;
   align-items: center;
-
+  height: 10rem;
   padding: 2rem;
   margin: 2rem;
-  border-color: white;
-  border-width: 2px;
+  border: 2px solid #cc7e7e; /* Light grey border */
+  border-radius: 8px; /* Rounded corners for a card-like appearance */
+  background-color: #811515; /* White background for better readability */
+}
+h2,
+h3,
+p {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #050303; /* Light borders under text for separation */
+}
+h3,
+p {
+  padding-bottom: 0.5rem; /* Padding for visual space */
 }
 </style>

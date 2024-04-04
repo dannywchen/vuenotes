@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>peepeepoopoo</h1>
+    <h1>Characters</h1>
     <div class="list">
       <ListComp
-        class="comp"
-        v-for="obj in list"
+        v-for="(obj, index) in list"
+        :key="index"
         :name="obj.name"
         :age="obj.age"
         :gender="obj.gender"
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import ListComp from "../components/ListComp.vue";
-import { list } from "../../list.js";
+import ListComp from "../components/ListComp.vue"; // Adjust the import path as necessary
+import { list } from "/list.js"; // Adjust the path to where your list.js is located
 
 export default {
   name: "HomeView",
@@ -35,7 +35,9 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 50rem;
   justify-content: space-evenly;
+  align-items: start; /* Align items at the start */
+  width: 100%; /* Adjusted for responsiveness */
+  padding: 1rem; /* Padding around the entire list for spacing */
 }
 </style>
